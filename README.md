@@ -1,2 +1,42 @@
-# inet4031-testlab12
-This week's lab provides a preview into the revised lab for INET 4031. Students will use their current VM setup to clone the repository into and work through the provided Wiki which has assignment guidelines.
+# Docker Lab: Containerizing a Three-Tier Application
+**INET 4031 - Introductions to Systems**
+
+This lab introduces Docker and Docker Compose by having you containerize a
+real, multi-service application. You will package three components: Apache,
+Flask, and MariaDB. These will be packaged into separate containers and wired together so they function as a complete application.
+
+The application code and scaffolding are provided. Your job is to complete the Dockerfiles, verify the stack runs correctly, and document your work below.
+
+> **Directions and explanations for this lab are on the repository Wiki.**
+> Refer to the Wiki pages for step-by-step instructions.
+
+---
+
+*The sections below are for you to fill out. Replace each placeholder with your own content before submitting. Having a detailed README is the best practice for showing your work in future GitHub repositories.*
+
+---
+
+# Project Overview
+
+<!-- Briefly describe what this application does in your own words.
+     What problem does it solve? What does a user interact with? -->
+
+# Prerequisites
+
+<!-- List what needs to be installed or configured on the VM before this lab
+     will work. Include Docker, Docker Compose, and anything else required. -->
+
+# Getting Started
+
+<!-- Explain how a new teammate would bring this stack up from a fresh clone.
+     Walk through every command they need to run, in order. -->
+
+# Configuration
+
+<!-- Explain the .env file: what it is, what variables it contains,
+     and what a teammate needs to provide that is not in this repository. -->
+
+# Verification
+
+<!-- Describe how to confirm the stack is running correctly.
+     Reference the check script and what a passing run looks like. -->
