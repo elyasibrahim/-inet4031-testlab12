@@ -12,35 +12,51 @@ The application code and scaffolding are provided. Your job is to complete the D
 
 ---
 
-*The sections below are for you to fill out. Replace each placeholder with your own content before submitting. Having a detailed README is the best practice for showing your work in future GitHub repositories.*
 
 ---
 
 # Project Overview
-
-<!-- Briefly describe what this application does in your own words.
-     What problem does it solve? What does a user interact with? -->
+This project demonstrates how to containerize a three-tier application using Docker and Docker Compose. The application consists of three services: Apache (web server), Flask (backend API), and MariaDB (database). Each service runs in its own container and communicates through Docker’s internal network.
 
 # Prerequisites
-
-<!-- List what needs to be installed or configured on the VM before this lab
-     will work. Include Docker, Docker Compose, and anything else required. -->
+To run this project, you need:
+- Ubuntu Virtual Machine
+- Docker installed
+- Docker Compose installed
+- Git installed
+- VirtualBox or another VM platform
 
 # Getting Started
+1. Clone the repository:
+git clone https://github.com/elyasibrahim/-inet4031-testlab12.git
+cd inet4031-testlab12
 
-<!-- Explain how a new teammate would bring this stack up from a fresh clone.
-     Walk through every command they need to run, in order. -->
+2. Build and start the containers:
+docker compose up --build
+
+3. Verify containers are running:
+docker compose ps
 
 # Configuration
+This application uses environment variables stored in the `.env` file, including the database name, user, and password. These values are used by both the Flask application and the MariaDB service to establish a connection between them.
 
-<!-- Explain the .env file: what it is, what variables it contains,
-     and what a teammate needs to provide that is not in this repository. -->
+All services are defined in the `docker-compose.yml` file. The `db` service runs MariaDB, the `app` service runs the Flask backend, and the `web` service runs Apache as the frontend. Docker Compose allows these services to communicate with each other through an internal network.
 
 # Verification
+To verify the application is working:
 
-<!-- Describe how to confirm the stack is running correctly.
-     Reference the check script and what a passing run looks like. -->
+1. Open the web app:
+http://localhost:8080
 
-# Feedback (Optional)
+2. Check API health:
+curl http://localhost:80/health
 
-<!-- Do you have any feedback you would like to give us after completing this lab? What are some things you enjoyed? What about others that you felt was lackluster? Or maybe there was something that we missed that you'd love for us to touch on! This will help us improve the INET 4031 lab experience. We appreciate everything we can get!  -->
+3. Expected output:
+{"database": "connected", "status": "healthy"}
+
+4. Run the check script:
+./check-lab.sh
+
+All checks should pass successfully.
+
+
