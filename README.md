@@ -28,8 +28,6 @@ To run this project, you need:
 
 # Getting Started
 1. Clone the repository:
-git clone https://github.com/elyasibrahim/-inet4031-testlab12.git
-cd inet4031-testlab12
 
 2. Build and start the containers:
 docker compose up --build
